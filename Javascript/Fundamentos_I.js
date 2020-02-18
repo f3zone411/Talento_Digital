@@ -204,7 +204,7 @@ console.log(maxminavg([1,5,10,-2]));
 /*Intercambia Valores: Escribe una función que intercambie el primer y el último valor de cualquier array. 
 La extensión mínima predeterminada del array es 2 (ej: [1,5,10,-2] será [-2,5,10,1]).*/
 
-function swap (arr)
+function swap (arr){
 
     var temp = arr[0];
     arr[0] = arr [arr.length];
