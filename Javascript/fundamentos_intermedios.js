@@ -72,4 +72,123 @@ function fibonacci(x){
 
         }
 }
-fibonacci(20);
+//fibonacci(20);
+
+/*Array: Penúltimo: Devuelve el penúltimo elemento del array. Dado [42,true,4,”Liam”, 7] devuelve “Liam”. 
+Si el array es muy pequeño, devuelve null.*/
+
+function penultimo(arr){
+
+    if (arr.length <= 1){
+
+        return null; 
+    }
+    else {
+
+        return (arr[arr.length-2]);
+    }
+
+}
+//console.log(penultimo([42,true,4,'Liam',7]));
+//console.log(penultimo([1]));
+
+/*Array: “N” último: Devuelve el elemento “N” último. Dado ([5,2,3,6,4,9,7],3], devuelve 4. 
+    Si el array es muy pequeño, devuelve null.*/
+
+function nultimo(arr,x){
+
+        if (arr.length < x){
+    
+            return null; 
+        }
+        else {
+    
+            return (arr[arr.length-x]);
+        }
+    
+}
+//console.log(nultimo([42,true,4,'Liam',7],3));
+//console.log(nultimo([1,2,4],3));
+//console.log(nultimo([5,2,3,6,4,9,7],5));
+
+/*Array: Segundo más grande: Devuelve el segundo elemento más grande de un array. 
+Dado [42,1,4,3.14,7], devuelve 7.  Si el array es muy pequeño, devuelve null.*/
+
+function secondlarger(arr){
+
+    if (arr.length <= 1){
+
+        return null;
+
+    }else{
+
+        var max = arr[0];
+        for (var i = 0; i < arr.length; i++){
+
+            if(arr[i] > max){
+
+                max = arr[i];
+
+            }
+
+        }
+        var sec_max = [0];
+        for (var i = 0; i < arr.length; i++){
+
+            if (arr[i] != max){
+
+                if (arr[i] > sec_max){
+
+                    sec_max = arr[i];
+
+                }
+            }
+        }
+    }
+
+return sec_max; 
+
+}
+//console.log(secondlarger([42,1,4,32,3.14,7,30]));
+
+/*Doble Problema Par: Crea una función que cambie un array dado duplicando cada uno de sus elementos 
+en una posición par, y manteniendo el orden original. 
+Convierte [4, "Ulysses", 42, false] a [4,4, "Ulysses", 42, 42, false].*/
+
+function doubletrouble (arr){
+
+    var newarr = [];
+    for (var i = 0; i < arr.length; i++){
+        
+        if (i % 2 == 0){
+
+            newarr.push(arr[i]);
+            newarr.push(arr[i]);
+
+        }
+        else {
+
+            newarr.push(arr[i]);
+
+        }
+    }
+return newarr;
+}
+//console.log(doubletrouble([4, "Ulysses", 42, false]));
+
+/*Crea una función Fib(n) que devuelve el enésimo número Fibonacci. Usa recursión para esto.*/
+
+function fib (x){
+
+    if (x == 0 || x == 1){
+
+        return x;
+
+    }
+    else {
+
+       return fib(x-2) + fib(x-1);
+    }
+
+}
+console.log(fib(7));
