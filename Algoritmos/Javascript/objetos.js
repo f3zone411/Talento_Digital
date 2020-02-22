@@ -13,6 +13,12 @@ console.log('El nombre del primer objeto es: ' + users[0].name);
 
 for (var user = 0; user < users.length; user++){
     
+    if (users[user].name == 'John'){
+
+        console.log('La edad de: ' + users[user].name + ' es:' + users[user].age);
+    
+    }
+
     console.log('Usuario: ' + user + ' Nombre: ' + users[user].name + ' -  Edad: ' + users[user].age);
 
 }
