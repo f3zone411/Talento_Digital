@@ -1,0 +1,89 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+body{
+
+    background-color: gray;
+}
+
+.row {
+
+    height: 20px;
+
+}
+
+.row div{
+
+    width: 20px;
+    height: 20px;    
+    display: inline-block;
+    
+}
+
+.brick{
+
+    background-color: orange;
+
+}
+
+.coin{
+
+    background: url('images/coin.png');
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position: center;  
+
+}
+
+#pacman {
+
+    background: url('images/black-pacman-r.gif');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px; 
+    position: absolute;
+
+}
+
+#cherry {
+
+    background: url('images/cherry.ico');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 20px;
+    height: 20px; 
+    position: absolute;
+
+}
+
+#score {
+
+    border: 3px dotted orange;
+    display: inline-block;
+    margin: 5px;
+    padding: 5px;
+    width: 30px;
+    height: 20px;
+    text-align: center;
+    position: absolute;
+    top: 3px;
+    left: 410px;
+
+}
+
+.cage {
+
+    background-color: transparent;
+    border-top: .1px solid whitesmoke;
+
+}
+.empty {
+
+    background-color: transparent;
+
+}

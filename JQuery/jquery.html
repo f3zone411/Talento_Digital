@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplicando JQuery</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+    
+    var e = true; 
+    
+    $(document).ready(function(){
+        
+        $('#btn-add').click(function(){
+
+            if (e){
+
+                $("#txt-add").before("<h5>Bienvenido</h5>");
+                $("#txt-add").after("<h5>a la práctica de JQuery</h5>");
+                e = false; 
+
+            }
+            
+            $('#txt-add').addClass("orange");
+            $('#container p').hide();
+            $('#btn-img').show();
+
+        });
+
+        $('#btn-img').click(function(){
+            $('#dojo-img').show();
+            $('#dojo-img').css("display","block");
+        });
+
+        $("#btn-toggle").click(function() {
+        $("#img-toggle").toggle("slow");
+        });
+
+        $("#btn-slide").click(function(){
+        $("#div-slide").slideToggle("slow");
+        });
+
+        $("#btn-slideDwn").click(function(){
+
+            if ( $("#div-slideDwn").first().is( ":hidden" ) ) {
+                $("#div-slideDwn").slideDown("slow");
+             } else {
+                $("#div-slideDwn").hide();
+            }
+                
+        });
+
+        $("#btn-slideUp").click(function(){
+            
+            if ( $("#div-slideUp").first().is( ":hidden" ) ) {
+                $("#div-slideUp").slideUp("slow");
+            } else {
+                $("#div-slideUp").hide();
+            }
+                
+        });
+
+        $("#btn-fade").click(function(){
+            if ( $("#dojo-img2").first().is( ":hidden" ) ) {
+                $("#dojo-img2").fadeIn("slow");
+                $("#btn-fade").text("Fade Out")
+                
+             } else {
+                $("#dojo-img2").fadeOut("slow");
+                $("#btn-fade").text("Fade In")
+            }
+                
+        });
+
+    }) 
+
+
+    </script>
+</head>
+<body>
+
+    <div class="content">
+        <a class="button" id="btn-add">Add Class</a>
+        <div class="add" id="container">
+
+            <h1 id="txt-add">Add Class</h1>
+            <p>Presiona el botón para agregar la clase "Orange" al headline, ocultar este texto y agregar texto "before" y "after"</p>
+            <p>Presiona el botón para mostrar una imagen</p>
+            
+        </div>
+        <a class="button" id="btn-img">Show Image</a>
+        <img id="dojo-img" src="images/codingdojo.png" alt="Coding Dojo Logo">
+    </div>
+    <hr>
+
+    <div class="content">
+        
+        <div class="btn-container">
+        <a id="btn-slide" class="button">Slidetoogle</a>
+        <a id="btn-toggle" class="button">Toggle</a>
+        <a id="btn-slideDwn" class="button">Slide Down</a>
+        <a id="btn-slideUp" class="button">Slide Up</a>
+        <a id="btn-fade" class="button">Fade Out</a>
+
+        </div> 
+        <img id="dojo-img2" src="images/codingdojo.png" alt="Coding Dojo Logo">
+        <div id="div-toggle" class="img-container">        
+            <img id="img-toggle" src="images/joker.png" alt="imagen activity">
+        </div>
+        <div id="div-slide" class="img-container">
+            <img  id="img-slide" src="images/Batman.png" alt="imagen activity">
+        </div>  
+        <div id="div-slideDwn" class="img-container">
+            <img  id="img-slideDwn" src="images/Riddler.png" alt="imagen activity">
+        </div>  
+        <div id="div-slideUp" class="img-container">
+            <img  id="img-slideUp" src="images/penguin.png" alt="imagen activity">
+        </div>       
+              
+    </div>
+    <hr>
+    <a class="button">Append</a>
+    
+</body>
+</html>
