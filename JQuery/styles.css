@@ -36,11 +36,24 @@
 
 }
 
+#btn-html {
+    
+    display: none;
+
+}
+
 #dojo-img {
 
     width: 200px;
     height: auto;
     display: none;
+
+}
+
+#dojo-img2 {
+
+    width: 200px;
+    height: auto;
 
 }
 
@@ -77,6 +90,20 @@
     width: 200px;
     height: 200px;
     background-color: transparent;
+    text-align: center;
+    display: inline-block;
+    
+}
+
+.app-div {
+
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    padding: 5px;
+    width: 200px;
+    height: 200px;
+    background-color: orange;
     text-align: center;
     display: inline-block;
     
