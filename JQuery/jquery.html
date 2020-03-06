@@ -91,6 +91,20 @@
     
         });
 
+        $("#btn-alert").click(function(){
+
+            var count = 0;
+
+            if($("#check1").attr("checked")){
+
+                count += 1;
+                alert("Hola");
+            }
+
+            $("#container2 div").html("<img  id='img-slide' src='images/Batman.png' alt='imagen activity'>");
+
+        });
+
     }) 
 
 
@@ -150,6 +164,26 @@
         </div>
         
     </div>
+    <hr>
+    <div class="content">
+        <div class="btn-container">  
+            <a class="button" id="btn-alert">Probar</a>
+             
+        </div>
+        <div class="add" id="container3">
+            <h2>Prueba con attr val y text</h2>
+
+                <input type="checkbox" id="check1" name="char1" value="Batman" checked>
+                <label for="vehicle1">Me gusta Batman</label><br>
+                <input type="checkbox" id="Check2" name="char2" value="Joker">
+                <label for="vehicle2">Me gusta el Guason</label><br>
+                <input type="checkbox" id="check3" name="char3" value="Riddler">
+                <label for="vehicle3">Me gusta el Acertijo</label><br>
+
+        </div>
+        
+    </div>
+
     
     
 </body>
