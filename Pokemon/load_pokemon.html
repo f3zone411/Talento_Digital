@@ -37,7 +37,7 @@
         
         for (var i = 1; i <= 151; i++){
 
-            ruta = "<img id='"+i+"' src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png' alt='Coding Dojo Logo'>"; 
+            ruta = "<img id='"+i+"' src='http://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/"+i+".png' alt='Whos that Pokemon?'>"; 
 
             $("#container").append(ruta);
 
@@ -48,7 +48,7 @@
             $(this).click(function(){
 
                 id = $(this).attr("id");
-                console.log(id);
+                //console.log(id);
                 audiopokemon(id);
 
             });
