@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheater App</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <!--link rel="stylesheet" href="styles.css"-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+    function PrimeraMayuscula(string){
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+    
+    var ruta = ""; 
+    var id = "";
+    
+    $(document).ready(function(){
+        
+        function ktof (temp){
+
+            //console.log(temp);
+            var ntemp = parseFloat((temp - 273.15) * 1.8 + 32).toFixed(2);
+            return ntemp;
+
+        }
+
+        $('form').submit(function() {
+        // your code here (build up your url)
+
+        $("#info").hide();
+
+        var city = $("#city").val();
+
+        console.log(city);
+
+        $.get("http://api.openweathermap.org/data/2.5/weather?q="+city+"&APPID=9cf98ec971ede870f98f87f16ef2a3e0", function(data) {
+
+            var html_str = "";
+            var temp = ktof(data.main.temp);
+            var desc = data.weather[0].description;
+            var pos = desc.indexOf("rain");
+
+                
+            //console.log (temp);
+
+            html_str += "<h1>"+data.name+"</h1><br>";
+            if (desc.indexOf("rain") != -1){
+
+                html_str += "<img class='img-temp' src='images/rain.png' alt='rain'><br><br>";
+
+            }else if (desc.indexOf("clear") != -1){
+
+                html_str += "<img class='img-temp' src='images/sun.png' alt='sun'><br><br>";
+
+            }else if (desc.indexOf("clouds") != -1){
+
+                html_str += "<img class='img-temp' src='images/clouds.png' alt='clouds'><br><br>";
+
+            } 
+            html_str += "<h4>"+data.weather[0].description+"</h4><br>";
+                
+            html_str += "<h3 id='temp'>Temperatura: "+temp+"</h3><img id='img-far' src='images/farenheit.png' alt='Farenheit'><br>";
+            html_str += "<h3>Coordenadas: "+data.coord.lat+", "+data.coord.lon+"</h3><br>";
+            $("#info").html(html_str);
+
+        }, "json");
+
+        $("#info").fadeIn("slow"); 
+
+        // don't forget to return false so the page doesn't refresh
+        return false;
+    });
+
+
+    }) 
+
+
+    </script>
+</head>
+<body>
+
+    <div class="weather-div"> 
+        
+        <form id="city-form" action="submit">
+
+            <label for="fname">Ingresa la Ciudad:</label><br>
+            <input type="text" id="city" name="city"><br><br>
+            <input type="submit" value="Submit">
+
+        </form>
+
+        <div id="info">
+
+        </div>
+
+    </div>
+
+    
+    
+</body>
+</html>
