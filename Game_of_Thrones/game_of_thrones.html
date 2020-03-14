@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game of Thrones</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+
+    let page = 1;
+    const pageSize = 10;
+    const baseUrl = "https://www.anapioficeandfire.com/api/";
+
+    function PrimeraMayuscula(string){
+        return string.charAt(0).toUpperCase() + string.slice(1);
+    }
+
+    $(document).ready(function(){
+
+    function housesGet() {
+        $.get(baseUrl + "houses?pageSize=" + pageSize + "&page=" + page,
+        function (houses) {
+            let housesOutput = "";
+            for (let i = 1; i < houses.length; i++) {
+                housesOutput += "<li data-url='" + houses[i].url + "'>" + houses[i].name + "</li>";
+            }
+            $("#more-houses ul").html(housesOutput);
+            },
+            "json"
+            );
+            }
+
+            housesGet();
+            $("#page").html(page);
+
+            $(document).on("click", "#more-houses ul li",
+                function () {
+                    const house = $(this).attr("data-url");
+                    $.get(house, function (data) {
+                        console.log(data);
+                        $("")
+                    }, "json");
+                }
+            );
+            $("#more").click(function () {
+                page = page + 1;
+                housesGet();
+                $("#page").html(page);
+            });
+            $("#less").click(function () {
+                if (page > 1) {
+                    page = page - 1;
+                    housesGet();
+                    $("#page").html(page);
+                }
+            });
+
+    }) 
+
+
+    </script>
+</head>
+<body>
+
+    <div class="container"> 
+        
+        <div id="houses">
+            <a data-flickr-embed="true" href="#" title="House Stark"><img id="stark" src="https://live.staticflickr.com/6149/6033243060_6986b19cd4.jpg" width="300" height="auto" alt="House Stark"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            <a data-flickr-embed="true" href="#" title="House Baratheon"><img id="baratheon" src="https://live.staticflickr.com/6128/6033226512_6ca21abd37.jpg" width="300" height="auto" alt="House Baratheon"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            <a data-flickr-embed="true" href="#" title="House Targaryen"><img id="targaryen" src="https://live.staticflickr.com/6088/6033211686_fa9d9c1713.jpg" width="300" height="auto" alt="House Targaryen"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            <a data-flickr-embed="true" href="#" title="House Lannister"><img id="lannister" src="https://live.staticflickr.com/6067/6033140330_603fa421df.jpg" width="300" height="auto" alt="House Lannister"></a><script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+        </div>
+
+        <div id="more-houses">
+
+            <ul></ul>
+            <button id="less">-</button>
+            <span id="page"></span>
+            <button id="more">+</button>
+
+        </div>
+        <div id="info">
+
+        </div>
+
+    </div>
+
+    
+    
+</body>
+</html>
