@@ -1,0 +1,87 @@
+.settings {
+  padding: 10px;
+  display: inline-block;
+}
+.box-settings {
+  margin: 15px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.separation {
+  margin-top: 10px;
+}
+.center {
+  text-align: center;
+}
+/*CSS reset settings here*/
+* {
+  margin: 0px;
+  padding: 0px;
+}
+#wrapper {
+  width: 950px;
+  background-color: #20b2aa;
+  padding: 10px;
+  display: inline-block;
+}
+#header {
+  min-height: 150px;
+  background-color: #daa520;
+  text-align: center;
+}
+#header .logo {
+  width: 170px;
+  height: auto;
+  margin: 0 auto;
+}
+#navigation {
+  width: 20%;
+  height: 400px;
+  background-color: #7b68ee;
+  vertical-align: top;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 10px;
+  text-align: center;
+}
+#navigation .text {
+  color: #f0ffff;
+  margin-top: 180px;
+}
+#main_content {
+  min-height: 400px;
+  width: 75%;
+  background-color: #ff6347;
+  padding: 10px;
+  display: inline-block;
+  margin-top: 10px;
+}
+.subcontents {
+  width: 200px;
+  height: 200px;
+  background-color: #7fff00;
+  margin-top: 10px;
+  margin: 15px;
+  display: inline-block;
+  vertical-align: middle;
+  text-align: center;
+}
+.subcontents .images {
+  width: 170px;
+  height: 170px;
+  margin-top: 15px;
+}
+#advertisement {
+  min-height: 120px;
+  width: 680px;
+  background-color: #ff8c00;
+  margin-left: 10px;
+  margin-top: 10px;
+  padding: 10px;
+  display: inline-block;
+  text-align: center;
+}
+#advertisement .text {
+  color: #7fff00;
+  margin-top: 30px;
+}
